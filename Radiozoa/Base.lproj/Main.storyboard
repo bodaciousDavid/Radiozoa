@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -45,7 +46,69 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="439.5" y="388.5"/>
+            <point key="canvasLocation" x="327" y="457.5"/>
+        </scene>
+        <!--Peek Paged Scroll View Controller-->
+        <scene sceneID="tWK-Qm-78i">
+            <objects>
+                <viewController id="RxL-M0-lxr" customClass="PeekPagedScrollViewController" customModule="Radiozoa" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wM2-ob-1zg"/>
+                        <viewControllerLayoutGuide type="bottom" id="Z7Y-9h-84p"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rNa-02-8US">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="VRf-My-im8">
+                                <rect key="frame" x="-19" y="-18" width="39" height="37"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="204" y="743" width="39" height="37"/>
+                                </variation>
+                            </pageControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8hz-TX-6UT">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="8hz-TX-6UT" firstAttribute="top" secondItem="wM2-ob-1zg" secondAttribute="bottom" constant="224" id="NXn-HJ-xft"/>
+                            <constraint firstItem="8hz-TX-6UT" firstAttribute="centerX" secondItem="rNa-02-8US" secondAttribute="centerX" id="dhK-Wg-NT4"/>
+                            <constraint firstItem="8hz-TX-6UT" firstAttribute="leading" secondItem="rNa-02-8US" secondAttribute="leadingMargin" constant="64" id="geX-1Q-tCe"/>
+                            <constraint firstItem="8hz-TX-6UT" firstAttribute="centerY" secondItem="rNa-02-8US" secondAttribute="centerY" id="qp3-h5-eaU"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="VRf-My-im8"/>
+                                <exclude reference="8hz-TX-6UT"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="NXn-HJ-xft"/>
+                                <exclude reference="dhK-Wg-NT4"/>
+                                <exclude reference="geX-1Q-tCe"/>
+                                <exclude reference="qp3-h5-eaU"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="VRf-My-im8"/>
+                                <include reference="8hz-TX-6UT"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="NXn-HJ-xft"/>
+                                <include reference="dhK-Wg-NT4"/>
+                                <include reference="geX-1Q-tCe"/>
+                                <include reference="qp3-h5-eaU"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="VRf-My-im8" id="cAJ-3G-7c3"/>
+                        <outlet property="scrollView" destination="8hz-TX-6UT" id="NDK-cX-Kzv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Qn-a1-g9Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="999" y="457.5"/>
         </scene>
     </scenes>
 </document>
