@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet var scrollView: UIScrollView!
-    @IBOutlet var pageControl: UIPageControl!
+//    @IBOutlet var pageControl: UIPageControl!
     var pageImages: [UIImage] = []
     var pageViews: [UIImageView?] = []
     
@@ -27,10 +27,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             UIImage(named: "Pic5")!]
         
         let pageCount = pageImages.count
-        
-        // 2
-        pageControl.currentPage = 0
-        pageControl.numberOfPages = pageCount
         
         // 3
         for _ in 0..<pageCount {
@@ -63,6 +59,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             
             // 3
             let newPageView = UIImageView(image: pageImages[page])
+            newPageView.transform = CGAffineTransformMakeRotation(3.1415926/2);
             newPageView.contentMode = .ScaleAspectFit
             newPageView.frame = frame
             scrollView.addSubview(newPageView)
@@ -89,7 +86,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         let page = Int(floor((scrollView.contentOffset.x * 2.0 + pageWidth) / (pageWidth * 2.0)))
         
         // Update the page control
-        pageControl.currentPage = page
+        //pageControl.currentPage = page
+       
         
         // Work out which pages you want to load
         let firstPage = page - 1

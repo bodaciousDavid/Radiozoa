@@ -13,7 +13,6 @@
 		634792851B2B7E06001E5DDC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 634792841B2B7E06001E5DDC /* Images.xcassets */; };
 		634792881B2B7E06001E5DDC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634792861B2B7E06001E5DDC /* LaunchScreen.xib */; };
 		634792941B2B7E06001E5DDC /* RadiozoaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634792931B2B7E06001E5DDC /* RadiozoaTests.swift */; };
-		6347929E1B2B874E001E5DDC /* PeekPagedScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6347929D1B2B874E001E5DDC /* PeekPagedScrollViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +36,6 @@
 		6347928D1B2B7E06001E5DDC /* RadiozoaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RadiozoaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		634792921B2B7E06001E5DDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		634792931B2B7E06001E5DDC /* RadiozoaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiozoaTests.swift; sourceTree = "<group>"; };
-		6347929D1B2B874E001E5DDC /* PeekPagedScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeekPagedScrollViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +79,6 @@
 			children = (
 				6347927D1B2B7E06001E5DDC /* AppDelegate.swift */,
 				6347927F1B2B7E06001E5DDC /* ViewController.swift */,
-				6347929D1B2B874E001E5DDC /* PeekPagedScrollViewController.swift */,
 				634792811B2B7E06001E5DDC /* Main.storyboard */,
 				634792841B2B7E06001E5DDC /* Images.xcassets */,
 				634792861B2B7E06001E5DDC /* LaunchScreen.xib */,
@@ -217,7 +214,6 @@
 			files = (
 				634792801B2B7E06001E5DDC /* ViewController.swift in Sources */,
 				6347927E1B2B7E06001E5DDC /* AppDelegate.swift in Sources */,
-				6347929E1B2B874E001E5DDC /* PeekPagedScrollViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +409,7 @@
 				634792991B2B7E06001E5DDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6347929A1B2B7E06001E5DDC /* Build configuration list for PBXNativeTarget "RadiozoaTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +418,7 @@
 				6347929C1B2B7E06001E5DDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
