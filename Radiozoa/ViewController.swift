@@ -34,8 +34,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         // 4
         let pagesScrollViewSize = scrollView.frame.size
-        scrollView.contentSize = CGSize(width: pagesScrollViewSize.width * CGFloat(pageImages.count),
-            height: pagesScrollViewSize.height)
+        scrollView.contentSize = CGSize(width: pagesScrollViewSize.height * CGFloat(pageImages.count),
+            height: pagesScrollViewSize.width)
         
         // 5
         loadVisiblePages()
@@ -53,7 +53,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         } else {
             // 2
             var frame = scrollView.bounds
-            frame.origin.x = frame.size.height * CGFloat(page)
+            frame.origin.x = frame.size.width * CGFloat(page)
             frame.origin.y = 0.0
             
             // 3
@@ -81,7 +81,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     }
     func loadVisiblePages() {
         // First, determine which page is currently visible
-        let pageWidth = scrollView.frame.size.width
+        let pageWidth = scrollView.frame.size.height
+        
         let page = Int(floor((scrollView.contentOffset.x * 2.0 + pageWidth) / (pageWidth * 2.0)))
         
         // Work out which pages you want to load
