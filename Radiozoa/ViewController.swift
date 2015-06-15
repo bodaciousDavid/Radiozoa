@@ -14,11 +14,15 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     var pageImages: [UIImage] = []
     var pageViews: [UIImageView?] = []
     
+    var cardView: UIView!
+    var back: UIImageView!
+    var front: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        // 1
+        
+        // array of images
         pageImages = [UIImage(named: "Pic1")!,
             UIImage(named: "Pic2")!,
             UIImage(named: "Pic3")!,
@@ -47,27 +51,30 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         let pageCount = pageImages.count
         
-        // 3
+        // no images are loaded yet so all values are null
         for _ in 0..<pageCount {
             pageViews.append(nil)
         }
         
-        // 4
+        // sets the hieght and width of scrollable area
         let pagesScrollViewSize = scrollView.frame.size
         scrollView.contentSize = CGSize(width: pagesScrollViewSize.height * CGFloat(pageImages.count),
             height: pagesScrollViewSize.width)
         
-        // 5
+
         loadVisiblePages()
     }
 
+    
+    
+    
     func loadPage(page: Int) {
         if page < 0 || page >= pageImages.count {
             // If it's outside the range of what you have to display, then do nothing
             return
         }
         
-        // 1
+        // loads images that are visable
         if let pageView = pageViews[page] {
             // Do nothing. The view is already loaded.
         } else {
