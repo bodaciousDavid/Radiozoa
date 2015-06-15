@@ -23,7 +23,27 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             UIImage(named: "Pic2")!,
             UIImage(named: "Pic3")!,
             UIImage(named: "Pic4")!,
-            UIImage(named: "Pic5")!]
+            UIImage(named: "Pic5")!,
+            UIImage(named: "Pic6")!,
+            UIImage(named: "Pic7")!,
+            UIImage(named: "Pic8")!,
+            UIImage(named: "Pic9")!,
+            UIImage(named: "Pic10")!,
+            UIImage(named: "Pic11")!,
+            UIImage(named: "Pic12")!,
+            UIImage(named: "Pic13")!,
+            UIImage(named: "Pic14")!,
+            UIImage(named: "Pic15")!,
+            UIImage(named: "Pic16")!,
+            UIImage(named: "Pic17")!,
+            UIImage(named: "Pic18")!,
+            UIImage(named: "Pic19")!,
+            UIImage(named: "Pic20")!,
+            UIImage(named: "Pic21")!,
+            UIImage(named: "Pic22")!,
+            UIImage(named: "Pic23")!,
+            UIImage(named: "Pic24")!,
+            UIImage(named: "Pic25")!]
         
         let pageCount = pageImages.count
         
