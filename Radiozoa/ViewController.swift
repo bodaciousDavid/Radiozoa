@@ -69,9 +69,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         loadVisiblePages()
     }
 
-    
-    
-    
     func loadPage(page: Int) {
         if page < 0 || page >= pageImages.count {
             // If it's outside the range of what you have to display, then do nothing

@@ -30,14 +30,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14901960780000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="l1O-bU-EsS" firstAttribute="leading" secondItem="n77-DR-sTK" secondAttribute="leading" id="1U3-FW-KpE"/>
-                            <constraint firstItem="pm3-gl-YGP" firstAttribute="trailing" secondItem="n77-DR-sTK" secondAttribute="trailingMargin" id="9IY-Wa-YdI"/>
-                            <constraint firstItem="l1O-bU-EsS" firstAttribute="top" secondItem="s0x-ne-IbH" secondAttribute="bottom" id="CBm-MX-fUR"/>
-                            <constraint firstItem="pm3-gl-YGP" firstAttribute="leading" secondItem="n77-DR-sTK" secondAttribute="leadingMargin" id="Qn6-8v-naW"/>
-                            <constraint firstItem="pm3-gl-YGP" firstAttribute="centerX" secondItem="l1O-bU-EsS" secondAttribute="centerX" id="S5H-JM-zMd"/>
-                            <constraint firstItem="pm3-gl-YGP" firstAttribute="top" secondItem="n77-DR-sTK" secondAttribute="top" constant="77" id="cor-bc-gvi"/>
-                            <constraint firstItem="pm3-gl-YGP" firstAttribute="bottom" secondItem="uTr-rg-3xa" secondAttribute="top" id="qeK-1d-Sb4"/>
-                            <constraint firstItem="pm3-gl-YGP" firstAttribute="top" secondItem="l1O-bU-EsS" secondAttribute="bottom" constant="8" symbolic="YES" id="qmK-xu-dky"/>
+                            <constraint firstItem="pm3-gl-YGP" firstAttribute="top" secondItem="n77-DR-sTK" secondAttribute="top" constant="59" id="EwG-mD-bA5"/>
+                            <constraint firstItem="pm3-gl-YGP" firstAttribute="bottom" secondItem="uTr-rg-3xa" secondAttribute="top" id="Fs5-ti-OQ1"/>
+                            <constraint firstItem="l1O-bU-EsS" firstAttribute="top" secondItem="s0x-ne-IbH" secondAttribute="bottom" id="NHw-y5-Ury"/>
+                            <constraint firstItem="pm3-gl-YGP" firstAttribute="centerX" secondItem="n77-DR-sTK" secondAttribute="centerX" id="Y06-2q-6iu"/>
+                            <constraint firstItem="l1O-bU-EsS" firstAttribute="leading" secondItem="n77-DR-sTK" secondAttribute="leading" id="dVP-gC-Ssu"/>
+                            <constraint firstItem="pm3-gl-YGP" firstAttribute="top" secondItem="l1O-bU-EsS" secondAttribute="bottom" constant="8" symbolic="YES" id="iIQ-55-KJ2"/>
+                            <constraint firstItem="pm3-gl-YGP" firstAttribute="leading" secondItem="n77-DR-sTK" secondAttribute="leadingMargin" constant="-11" id="pWm-g4-WWa"/>
+                            <constraint firstItem="l1O-bU-EsS" firstAttribute="centerX" secondItem="pm3-gl-YGP" secondAttribute="centerX" id="sC9-oR-YB6"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -45,14 +45,14 @@
                                 <exclude reference="pm3-gl-YGP"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="1U3-FW-KpE"/>
-                                <exclude reference="CBm-MX-fUR"/>
-                                <exclude reference="9IY-Wa-YdI"/>
-                                <exclude reference="Qn6-8v-naW"/>
-                                <exclude reference="S5H-JM-zMd"/>
-                                <exclude reference="cor-bc-gvi"/>
-                                <exclude reference="qeK-1d-Sb4"/>
-                                <exclude reference="qmK-xu-dky"/>
+                                <exclude reference="NHw-y5-Ury"/>
+                                <exclude reference="dVP-gC-Ssu"/>
+                                <exclude reference="sC9-oR-YB6"/>
+                                <exclude reference="EwG-mD-bA5"/>
+                                <exclude reference="Fs5-ti-OQ1"/>
+                                <exclude reference="Y06-2q-6iu"/>
+                                <exclude reference="iIQ-55-KJ2"/>
+                                <exclude reference="pWm-g4-WWa"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -61,14 +61,14 @@
                                 <include reference="pm3-gl-YGP"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="1U3-FW-KpE"/>
-                                <include reference="CBm-MX-fUR"/>
-                                <include reference="9IY-Wa-YdI"/>
-                                <include reference="Qn6-8v-naW"/>
-                                <include reference="S5H-JM-zMd"/>
-                                <include reference="cor-bc-gvi"/>
-                                <include reference="qeK-1d-Sb4"/>
-                                <include reference="qmK-xu-dky"/>
+                                <include reference="NHw-y5-Ury"/>
+                                <include reference="dVP-gC-Ssu"/>
+                                <include reference="sC9-oR-YB6"/>
+                                <include reference="EwG-mD-bA5"/>
+                                <include reference="Fs5-ti-OQ1"/>
+                                <include reference="Y06-2q-6iu"/>
+                                <include reference="iIQ-55-KJ2"/>
+                                <include reference="pWm-g4-WWa"/>
                             </mask>
                         </variation>
                     </view>
