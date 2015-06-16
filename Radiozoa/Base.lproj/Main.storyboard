@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -9,30 +10,76 @@
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Radiozoa" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hF0-r5-n8Y"/>
-                        <viewControllerLayoutGuide type="bottom" id="Nrm-1m-BAL"/>
+                        <viewControllerLayoutGuide type="top" id="s0x-ne-IbH"/>
+                        <viewControllerLayoutGuide type="bottom" id="uTr-rg-3xa"/>
                     </layoutGuides>
-                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" showsHorizontalScrollIndicator="NO" id="mTh-Vy-NJb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <view key="view" contentMode="scaleToFill" id="n77-DR-sTK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.14117647058823529" green="0.14901960784313725" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.transform.rotation.z">
-                                <real key="value" value="1.571"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                        <connections>
-                            <outlet property="delegate" destination="vXZ-lx-hvc" id="gCa-PS-CLw"/>
-                        </connections>
-                    </scrollView>
+                        <subviews>
+                            <label autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radiozoa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1O-bU-EsS">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="1" green="0.66274509800000003" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pm3-gl-YGP">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14117647059999999" green="0.14901960780000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="l1O-bU-EsS" firstAttribute="leading" secondItem="n77-DR-sTK" secondAttribute="leading" id="1U3-FW-KpE"/>
+                            <constraint firstItem="pm3-gl-YGP" firstAttribute="trailing" secondItem="n77-DR-sTK" secondAttribute="trailingMargin" id="9IY-Wa-YdI"/>
+                            <constraint firstItem="l1O-bU-EsS" firstAttribute="top" secondItem="s0x-ne-IbH" secondAttribute="bottom" id="CBm-MX-fUR"/>
+                            <constraint firstItem="pm3-gl-YGP" firstAttribute="leading" secondItem="n77-DR-sTK" secondAttribute="leadingMargin" id="Qn6-8v-naW"/>
+                            <constraint firstItem="pm3-gl-YGP" firstAttribute="centerX" secondItem="l1O-bU-EsS" secondAttribute="centerX" id="S5H-JM-zMd"/>
+                            <constraint firstItem="pm3-gl-YGP" firstAttribute="top" secondItem="n77-DR-sTK" secondAttribute="top" constant="77" id="cor-bc-gvi"/>
+                            <constraint firstItem="pm3-gl-YGP" firstAttribute="bottom" secondItem="uTr-rg-3xa" secondAttribute="top" id="qeK-1d-Sb4"/>
+                            <constraint firstItem="pm3-gl-YGP" firstAttribute="top" secondItem="l1O-bU-EsS" secondAttribute="bottom" constant="8" symbolic="YES" id="qmK-xu-dky"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="l1O-bU-EsS"/>
+                                <exclude reference="pm3-gl-YGP"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="1U3-FW-KpE"/>
+                                <exclude reference="CBm-MX-fUR"/>
+                                <exclude reference="9IY-Wa-YdI"/>
+                                <exclude reference="Qn6-8v-naW"/>
+                                <exclude reference="S5H-JM-zMd"/>
+                                <exclude reference="cor-bc-gvi"/>
+                                <exclude reference="qeK-1d-Sb4"/>
+                                <exclude reference="qmK-xu-dky"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="l1O-bU-EsS"/>
+                                <include reference="pm3-gl-YGP"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="1U3-FW-KpE"/>
+                                <include reference="CBm-MX-fUR"/>
+                                <include reference="9IY-Wa-YdI"/>
+                                <include reference="Qn6-8v-naW"/>
+                                <include reference="S5H-JM-zMd"/>
+                                <include reference="cor-bc-gvi"/>
+                                <include reference="qeK-1d-Sb4"/>
+                                <include reference="qmK-xu-dky"/>
+                            </mask>
+                        </variation>
+                    </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
-                        <outlet property="scrollView" destination="mTh-Vy-NJb" id="Zid-g6-BXG"/>
+                        <outlet property="scrollView" destination="pm3-gl-YGP" id="IkP-vw-89P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="141" y="552.75"/>
+            <point key="canvasLocation" x="141" y="552"/>
         </scene>
     </scenes>
 </document>

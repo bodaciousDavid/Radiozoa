@@ -23,31 +23,34 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         
         // array of images
-        pageImages = [UIImage(named: "Pic1")!,
+        //this will be replaced with cardView objects
+        pageImages = [
+            UIImage(named: "Pic1")!,
             UIImage(named: "Pic2")!,
             UIImage(named: "Pic3")!,
             UIImage(named: "Pic4")!,
-            UIImage(named: "Pic5")!,
-            UIImage(named: "Pic6")!,
-            UIImage(named: "Pic7")!,
-            UIImage(named: "Pic8")!,
-            UIImage(named: "Pic9")!,
-            UIImage(named: "Pic10")!,
-            UIImage(named: "Pic11")!,
-            UIImage(named: "Pic12")!,
-            UIImage(named: "Pic13")!,
-            UIImage(named: "Pic14")!,
-            UIImage(named: "Pic15")!,
-            UIImage(named: "Pic16")!,
-            UIImage(named: "Pic17")!,
-            UIImage(named: "Pic18")!,
-            UIImage(named: "Pic19")!,
-            UIImage(named: "Pic20")!,
-            UIImage(named: "Pic21")!,
-            UIImage(named: "Pic22")!,
-            UIImage(named: "Pic23")!,
-            UIImage(named: "Pic24")!,
-            UIImage(named: "Pic25")!]
+            UIImage(named: "Pic5")!//,
+//            UIImage(named: "Pic6")!,
+//            UIImage(named: "Pic7")!,
+//            UIImage(named: "Pic8")!,
+//            UIImage(named: "Pic9")!,
+//            UIImage(named: "Pic10")!,
+//            UIImage(named: "Pic11")!,
+//            UIImage(named: "Pic12")!,
+//            UIImage(named: "Pic13")!,
+//            UIImage(named: "Pic14")!,
+//            UIImage(named: "Pic15")!,
+//            UIImage(named: "Pic16")!,
+//            UIImage(named: "Pic17")!,
+//            UIImage(named: "Pic18")!,
+//            UIImage(named: "Pic19")!,
+//            UIImage(named: "Pic20")!,
+//            UIImage(named: "Pic21")!,
+//            UIImage(named: "Pic22")!,
+//            UIImage(named: "Pic23")!,
+//            UIImage(named: "Pic24")!,
+//            UIImage(named: "Pic25")!
+        ]
         
         let pageCount = pageImages.count
         
@@ -56,10 +59,11 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             pageViews.append(nil)
         }
         
-        // sets the hieght and width of scrollable area
+        // sets the height and width of scrollable area
+        //this should be put into a scroll class
         let pagesScrollViewSize = scrollView.frame.size
-        scrollView.contentSize = CGSize(width: pagesScrollViewSize.height * CGFloat(pageImages.count),
-            height: pagesScrollViewSize.width)
+        scrollView.contentSize = CGSize(width:pagesScrollViewSize.width,
+            height: pagesScrollViewSize.height * CGFloat(pageImages.count) )
         
 
         loadVisiblePages()
@@ -78,14 +82,14 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         if let pageView = pageViews[page] {
             // Do nothing. The view is already loaded.
         } else {
-            // 2
-            var frame = scrollView.bounds
-            frame.origin.x = frame.size.width * CGFloat(page)
-            frame.origin.y = 0.0
             
-            // 3
+            // This defines where each piece of art will be placed
+            var frame = scrollView.bounds
+            frame.origin.x = 0.0
+            frame.origin.y = frame.size.height * CGFloat(page)
+            
+            // this will be replaced by card view
             let newPageView = UIImageView(image: pageImages[page])
-            newPageView.transform = CGAffineTransformMakeRotation(-3.1415926/2);
             newPageView.contentMode = .ScaleAspectFit
             newPageView.frame = frame
             scrollView.addSubview(newPageView)
@@ -109,8 +113,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     func loadVisiblePages() {
         // First, determine which page is currently visible
         let pageWidth = scrollView.frame.size.height
+        //view.bounds.size.width//
         
-        let page = Int(floor((scrollView.contentOffset.x * 2.0 + pageWidth) / (pageWidth * 2.0)))
+        let page = Int(floor((scrollView.contentOffset.y * 20.0 + pageWidth) / (pageWidth * 2.0)))
         
         // Work out which pages you want to load
         let firstPage = page - 1
