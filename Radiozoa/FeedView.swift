@@ -1,72 +1,44 @@
 //
-//  ViewController.swift
+//  FeedView.swift
 //  Radiozoa
 //
-//  Created by David Daly on 6/12/15.
+//  Created by David Daly on 6/18/15.
 //  Copyright (c) 2015 David Daly. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class ViewController: UIViewController, UIScrollViewDelegate {
-
-    @IBOutlet var scrollView: UIScrollView!
-    var pageImages: [UIImage] = []
+class FeedView { //UIScrollViewDelegate {
+    
+    var scrollView: UIScrollView!
+    var pageImages: [UIImage]
+    
+    init(scrollView: UIScrollView, pageImages: [UIImage] ){
+        self.scrollView = scrollView
+        self.pageImages = pageImages
+    
     var pageViews: [UIImageView?] = []
     
+    let pageCount = pageImages.count
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        var art_john = Artist(name: "John", contact: "fb.com/john")
-        var card1 = CardView(image: UIImage(named: "Pic1")!, artist: art_john)
-        
-        // array of images
-        //this will be replaced with cardView objects
-        pageImages = [
-            UIImage(named: "Pic1")!,
-            UIImage(named: "Pic2")!,
-            UIImage(named: "Pic3")!,
-            UIImage(named: "Pic4")!,
-            UIImage(named: "Pic5")!//,
-//            UIImage(named: "Pic6")!,
-//            UIImage(named: "Pic7")!,
-//            UIImage(named: "Pic8")!,
-//            UIImage(named: "Pic9")!,
-//            UIImage(named: "Pic10")!,
-//            UIImage(named: "Pic11")!,
-//            UIImage(named: "Pic12")!,
-//            UIImage(named: "Pic13")!,
-//            UIImage(named: "Pic14")!,
-//            UIImage(named: "Pic15")!,
-//            UIImage(named: "Pic16")!,
-//            UIImage(named: "Pic17")!,
-//            UIImage(named: "Pic18")!,
-//            UIImage(named: "Pic19")!,
-//            UIImage(named: "Pic20")!,
-//            UIImage(named: "Pic21")!,
-//            UIImage(named: "Pic22")!,
-//            UIImage(named: "Pic23")!,
-//            UIImage(named: "Pic24")!,
-//            UIImage(named: "Pic25")!
-        ]
-        
-        let pageCount = pageImages.count
-        
-        // no images are loaded yet so all values are null
-        for _ in 0..<pageCount {
-            pageViews.append(nil)
-        }
-        
-        // sets the height and width of scrollable area
-        //this should be put into a scroll class
-        let pagesScrollViewSize = scrollView.frame.size
-        scrollView.contentSize = CGSize(width:pagesScrollViewSize.width,
-            height: pagesScrollViewSize.height * CGFloat(pageImages.count) )
-        
-
-        loadVisiblePages()
+    // no images are loaded yet so all values are null
+    for _ in 0..<pageCount {
+    pageViews.append(nil)
     }
-
+    
+    // sets the height and width of scrollable area
+    //this should be put into a scroll class
+    let pagesScrollViewSize = scrollView.frame.size
+    scrollView.contentSize = CGSize(width:pagesScrollViewSize.width,
+    height: pagesScrollViewSize.height * CGFloat(pageImages.count) )
+    
+    
+    self.loadVisiblePages()
+    }
+    
+    
+    
     func loadPage(page: Int) {
         if page < 0 || page >= pageImages.count {
             // If it's outside the range of what you have to display, then do nothing
@@ -134,11 +106,4 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         // Load the pages that are now on screen
         loadVisiblePages()
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
-
