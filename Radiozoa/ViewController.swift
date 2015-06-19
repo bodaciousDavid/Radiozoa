@@ -64,10 +64,13 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         }
         // sets the height and width of scrollable area
         //this should be put into a scroll class
-        scrollView.frame.size.width = scrollView.frame.size.width
+        scrollView.frame.size.width = 365
+        scrollView.frame.size.height = 600
         let pagesScrollViewSize = scrollView.frame.size
         scrollView.contentSize = CGSize(width: pagesScrollViewSize.width,
-            height: pagesScrollViewSize.height * CGFloat(pageImages.count) * 1.1 )
+            height: pagesScrollViewSize.height * CGFloat(pageImages.count))
+        println(scrollView.frame.size.width)
+        println(pagesScrollViewSize.width)
         
 
         loadVisiblePages()
@@ -83,16 +86,19 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         if let pageView = pageViews[page] {
             // Do nothing. The view is already loaded.
         } else {
-            
+            println(scrollView.bounds.width)
+            println(scrollView.frame.width)
             // This defines where each piece of art will be placed
-            var frame = scrollView.bounds
+            var frame = scrollView.frame
             frame.origin.x = 0.0
-            frame.origin.y = (frame.size.height * CGFloat(page) * 1.1)
+            frame.origin.y = (frame.size.height * CGFloat(page))
+            frame = CGRectInset(frame, 0.0, 5.0)
             
             // this will be replaced by card view
             let newPageView = UIImageView(image: pageImages[page])
             newPageView.contentMode = .ScaleAspectFit
             newPageView.frame = frame
+            //newPageView.backgroundColor = UIColor(red: 255, green: 0, blue: 0, alpha: 20)
             scrollView.addSubview(newPageView)
             
             // 4

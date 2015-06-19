@@ -23,11 +23,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="1" green="0.66274509800000003" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="15" width="414" height="36"/>
-                                </variation>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VIb-gn-uBy">
+                            <scrollView autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFit" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="black" delaysContentTouches="NO" canCancelContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIb-gn-uBy">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="5" y="53" width="404" height="688"/>
@@ -37,13 +34,12 @@
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14901960780000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="VIb-gn-uBy" firstAttribute="leading" secondItem="n77-DR-sTK" secondAttribute="leadingMargin" constant="-11" id="6Ly-i2-oPN"/>
-                            <constraint firstItem="VIb-gn-uBy" firstAttribute="top" secondItem="l1O-bU-EsS" secondAttribute="bottom" constant="2" id="6Vo-ro-qn1"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="l1O-bU-EsS" secondAttribute="trailing" constant="-10" id="Fzt-yj-7NX"/>
-                            <constraint firstItem="VIb-gn-uBy" firstAttribute="top" secondItem="l1O-bU-EsS" secondAttribute="bottom" id="JNo-LK-iHw"/>
-                            <constraint firstItem="l1O-bU-EsS" firstAttribute="leading" secondItem="n77-DR-sTK" secondAttribute="leadingMargin" id="UgI-3x-469"/>
-                            <constraint firstItem="l1O-bU-EsS" firstAttribute="top" secondItem="n77-DR-sTK" secondAttribute="topMargin" constant="15" id="Zhp-7k-1zd"/>
+                            <constraint firstItem="l1O-bU-EsS" firstAttribute="centerX" secondItem="VIb-gn-uBy" secondAttribute="centerX" id="QYO-jE-dNj"/>
+                            <constraint firstItem="l1O-bU-EsS" firstAttribute="leading" secondItem="n77-DR-sTK" secondAttribute="leading" id="Yvn-vt-Nao"/>
                             <constraint firstAttribute="bottomMargin" secondItem="VIb-gn-uBy" secondAttribute="bottom" id="Zwn-GH-Fyl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VIb-gn-uBy" secondAttribute="trailing" constant="-11" id="fIw-cG-pMJ"/>
+                            <constraint firstItem="l1O-bU-EsS" firstAttribute="top" secondItem="n77-DR-sTK" secondAttribute="topMargin" constant="15" id="iIl-W0-nC4"/>
+                            <constraint firstItem="VIb-gn-uBy" firstAttribute="top" secondItem="l1O-bU-EsS" secondAttribute="bottom" constant="2" id="vJf-hH-WK8"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -51,14 +47,13 @@
                                 <exclude reference="VIb-gn-uBy"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Fzt-yj-7NX"/>
-                                <exclude reference="UgI-3x-469"/>
-                                <exclude reference="Zhp-7k-1zd"/>
+                                <exclude reference="QYO-jE-dNj"/>
+                                <exclude reference="Yvn-vt-Nao"/>
+                                <exclude reference="iIl-W0-nC4"/>
                                 <exclude reference="6Ly-i2-oPN"/>
-                                <exclude reference="6Vo-ro-qn1"/>
-                                <exclude reference="JNo-LK-iHw"/>
                                 <exclude reference="Zwn-GH-Fyl"/>
                                 <exclude reference="fIw-cG-pMJ"/>
+                                <exclude reference="vJf-hH-WK8"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -67,14 +62,13 @@
                                 <include reference="VIb-gn-uBy"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Fzt-yj-7NX"/>
-                                <include reference="UgI-3x-469"/>
-                                <include reference="Zhp-7k-1zd"/>
+                                <include reference="QYO-jE-dNj"/>
+                                <include reference="Yvn-vt-Nao"/>
+                                <include reference="iIl-W0-nC4"/>
                                 <include reference="6Ly-i2-oPN"/>
-                                <include reference="6Vo-ro-qn1"/>
-                                <include reference="JNo-LK-iHw"/>
                                 <include reference="Zwn-GH-Fyl"/>
                                 <include reference="fIw-cG-pMJ"/>
+                                <include reference="vJf-hH-WK8"/>
                             </mask>
                         </variation>
                     </view>
