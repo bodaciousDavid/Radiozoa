@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UIScrollViewDelegate {
 
-    //@IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet var scrollView: UIScrollView!
     
     var pageViews: [UIView?] = []
@@ -25,6 +25,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
         let cardCount = cardDB.array.count
         
+        
         // no images are loaded yet so all values are null
         for _ in 0..<cardCount {
             pageViews.append(nil)
@@ -34,7 +35,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         let pagesScrollViewSize = scrollView.frame.size
         scrollView.contentSize = CGSize(width: pagesScrollViewSize.width,
-            height: pagesScrollViewSize.height * CGFloat(pageImages.count))
+            height: pagesScrollViewSize.height * 5 * CGFloat(pageImages.count))
         
         loadVisiblePages()
     }
@@ -51,22 +52,20 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         } else {
             // This defines where each piece of art will be placed
             var frame = scrollView.frame
+            //println(scrollView.frame)
             frame.origin.x = 0.0
             frame.origin.y = (frame.size.height * CGFloat(page))
             frame = CGRectInset(frame, 0.0, 5.0)
             
-            // this will be replaced by card view
-            //let newPageView = UIView()
-            //newPageView.addSubview(pageImages[page])
-//            newPageView.contentMode = .ScaleAspectFit
-//            newPageView.frame = frame
-            //newPageView.backgroundColor = UIColor(red: 255, green: 0, blue: 0, alpha: 20)
-            //containerView.addSubview(newPageView)
-//            scrollView.addSubview(newPageView)
-            //pageImages[page].backgroundColor = UIColor(red: 255, green: 0, blue: 0, alpha: 20)
-            pageImages[page].contentMode = .ScaleAspectFit
+            pageImages[page].backgroundColor = UIColor(red: 255, green: 0, blue: 0, alpha: 20)
+            println(pageImages[page].subviews)
+            println(pageImages[page].frame)
+            //pageImages[page].contentMode = .ScaleAspectFit
             pageImages[page].frame = frame
-            scrollView.addSubview(pageImages[page])
+            
+            println(pageImages[page].frame)
+            containerView.addSubview(pageImages[page])
+            //scrollView.addSubview(pageImages[page])
             // 4
             pageViews[page] = pageImages[page]
         }

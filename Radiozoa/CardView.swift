@@ -15,6 +15,7 @@ class CardView {
     var front: UIImageView!
     var back: UIImageView!
     var blur: UIVisualEffectView
+    var showingBack = true
     
     var image: UIImage!
     var artist: Artist!
@@ -28,20 +29,30 @@ class CardView {
         back = UIImageView(image: image)
         blur = UIVisualEffectView()
         back.addSubview(blur)
-        blur.frame = back.frame
+        
         
         let singleTap = UITapGestureRecognizer(target: self, action: Selector("tapped"))
         singleTap.numberOfTapsRequired = 1
 
         let rect = CGRectMake(0, 0, 0, 0)
+        
+        front.contentMode = .ScaleAspectFit
+        front.image = image
         card = UIView(frame: rect)
         card.addGestureRecognizer(singleTap)
         card.userInteractionEnabled = true
-        card.addSubview(back)
+        front.contentMode = .ScaleAspectFit
+        card.addSubview(front)
+        card.clipsToBounds = true
         
     }
     func tapped() {
-        println("tapped")
+        if (showingBack) {
+            UIView.transitionFromView(back, toView: front, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+            showingBack = false
+        } else {
+            UIView.transitionFromView(front, toView: back, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromLeft, completion: nil)
+            showingBack = true
+        }
     }
-    
 }
