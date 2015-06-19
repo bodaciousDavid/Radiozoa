@@ -14,11 +14,17 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     var pageImages: [UIImage] = []
     var pageViews: [UIImageView?] = []
     
+    // Artist are the creators of each artwork 
+    struct Artist {
+        var name, contact: String
+        init(name:String, contact: String) {
+            self.name = name
+            self.contact = contact
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var art_john = Artist(name: "John", contact: "fb.com/john")
-        var card1 = CardView(image: UIImage(named: "Pic1")!, artist: art_john)
         
         // array of images
         //this will be replaced with cardView objects
@@ -27,27 +33,27 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             UIImage(named: "Pic2")!,
             UIImage(named: "Pic3")!,
             UIImage(named: "Pic4")!,
-            UIImage(named: "Pic5")!//,
-//            UIImage(named: "Pic6")!,
-//            UIImage(named: "Pic7")!,
-//            UIImage(named: "Pic8")!,
-//            UIImage(named: "Pic9")!,
-//            UIImage(named: "Pic10")!,
-//            UIImage(named: "Pic11")!,
-//            UIImage(named: "Pic12")!,
-//            UIImage(named: "Pic13")!,
-//            UIImage(named: "Pic14")!,
-//            UIImage(named: "Pic15")!,
-//            UIImage(named: "Pic16")!,
-//            UIImage(named: "Pic17")!,
-//            UIImage(named: "Pic18")!,
-//            UIImage(named: "Pic19")!,
-//            UIImage(named: "Pic20")!,
-//            UIImage(named: "Pic21")!,
-//            UIImage(named: "Pic22")!,
-//            UIImage(named: "Pic23")!,
-//            UIImage(named: "Pic24")!,
-//            UIImage(named: "Pic25")!
+            UIImage(named: "Pic5")!,
+            UIImage(named: "Pic6")!,
+            UIImage(named: "Pic7")!,
+            UIImage(named: "Pic8")!,
+            UIImage(named: "Pic9")!,
+            UIImage(named: "Pic10")!,
+            UIImage(named: "Pic11")!,
+            UIImage(named: "Pic12")!,
+            UIImage(named: "Pic13")!,
+            UIImage(named: "Pic14")!,
+            UIImage(named: "Pic15")!,
+            UIImage(named: "Pic16")!,
+            UIImage(named: "Pic17")!,
+            UIImage(named: "Pic18")!,
+            UIImage(named: "Pic19")!,
+            UIImage(named: "Pic20")!,
+            UIImage(named: "Pic21")!,
+            UIImage(named: "Pic22")!,
+            UIImage(named: "Pic23")!,
+            UIImage(named: "Pic24")!,
+            UIImage(named: "Pic25")!
         ]
         
         let pageCount = pageImages.count
@@ -56,12 +62,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         for _ in 0..<pageCount {
             pageViews.append(nil)
         }
-        
         // sets the height and width of scrollable area
         //this should be put into a scroll class
+        scrollView.frame.size.width = scrollView.frame.size.width
         let pagesScrollViewSize = scrollView.frame.size
-        scrollView.contentSize = CGSize(width:pagesScrollViewSize.width,
-            height: pagesScrollViewSize.height * CGFloat(pageImages.count) )
+        scrollView.contentSize = CGSize(width: pagesScrollViewSize.width,
+            height: pagesScrollViewSize.height * CGFloat(pageImages.count) * 1.1 )
         
 
         loadVisiblePages()
@@ -81,7 +87,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             // This defines where each piece of art will be placed
             var frame = scrollView.bounds
             frame.origin.x = 0.0
-            frame.origin.y = frame.size.height * CGFloat(page)
+            frame.origin.y = (frame.size.height * CGFloat(page) * 1.1)
             
             // this will be replaced by card view
             let newPageView = UIImageView(image: pageImages[page])
@@ -112,8 +118,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         let page = Int(floor((scrollView.contentOffset.y * 2.0 + pageHeight) / (pageHeight * 2.0)))
         
         // Work out which pages you want to load
-        let firstPage = page - 1
-        let lastPage = page + 1
+        let firstPage = page - 6
+        let lastPage = page + 100
         
         // Purge anything before the first page
         for var index = 0; index < firstPage; ++index {
