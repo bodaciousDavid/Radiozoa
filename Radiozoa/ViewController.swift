@@ -10,69 +10,32 @@ import UIKit
 
 class ViewController: UIViewController, UIScrollViewDelegate {
 
+    //@IBOutlet weak var containerView: UIView!
     @IBOutlet var scrollView: UIScrollView!
-    var pageImages: [UIImage] = []
-    var pageViews: [UIImageView?] = []
     
-    // Artist are the creators of each artwork 
-    struct Artist {
-        var name, contact: String
-        init(name:String, contact: String) {
-            self.name = name
-            self.contact = contact
-        }
-    }
+    var pageViews: [UIView?] = []
+    var pageImages: [UIView] = []
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // array of images
-        //this will be replaced with cardView objects
-        pageImages = [
-            UIImage(named: "Pic1")!,
-            UIImage(named: "Pic2")!,
-            UIImage(named: "Pic3")!,
-            UIImage(named: "Pic4")!,
-            UIImage(named: "Pic5")!,
-            UIImage(named: "Pic6")!,
-            UIImage(named: "Pic7")!,
-            UIImage(named: "Pic8")!,
-            UIImage(named: "Pic9")!,
-            UIImage(named: "Pic10")!,
-            UIImage(named: "Pic11")!,
-            UIImage(named: "Pic12")!,
-            UIImage(named: "Pic13")!,
-            UIImage(named: "Pic14")!,
-            UIImage(named: "Pic15")!,
-            UIImage(named: "Pic16")!,
-            UIImage(named: "Pic17")!,
-            UIImage(named: "Pic18")!,
-            UIImage(named: "Pic19")!,
-            UIImage(named: "Pic20")!,
-            UIImage(named: "Pic21")!,
-            UIImage(named: "Pic22")!,
-            UIImage(named: "Pic23")!,
-            UIImage(named: "Pic24")!,
-            UIImage(named: "Pic25")!
-        ]
-        
-        let pageCount = pageImages.count
+
+        var cardDB = CardDB()
+        pageImages = cardDB.array
+
+        let cardCount = cardDB.array.count
         
         // no images are loaded yet so all values are null
-        for _ in 0..<pageCount {
+        for _ in 0..<cardCount {
             pageViews.append(nil)
         }
         // sets the height and width of scrollable area
         //this should be put into a scroll class
-        scrollView.frame.size.width = 365
-        scrollView.frame.size.height = 600
+        
         let pagesScrollViewSize = scrollView.frame.size
         scrollView.contentSize = CGSize(width: pagesScrollViewSize.width,
             height: pagesScrollViewSize.height * CGFloat(pageImages.count))
-        println(scrollView.frame.size.width)
-        println(pagesScrollViewSize.width)
         
-
         loadVisiblePages()
     }
 
@@ -86,8 +49,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         if let pageView = pageViews[page] {
             // Do nothing. The view is already loaded.
         } else {
-            println(scrollView.bounds.width)
-            println(scrollView.frame.width)
             // This defines where each piece of art will be placed
             var frame = scrollView.frame
             frame.origin.x = 0.0
@@ -95,14 +56,19 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             frame = CGRectInset(frame, 0.0, 5.0)
             
             // this will be replaced by card view
-            let newPageView = UIImageView(image: pageImages[page])
-            newPageView.contentMode = .ScaleAspectFit
-            newPageView.frame = frame
+            //let newPageView = UIView()
+            //newPageView.addSubview(pageImages[page])
+//            newPageView.contentMode = .ScaleAspectFit
+//            newPageView.frame = frame
             //newPageView.backgroundColor = UIColor(red: 255, green: 0, blue: 0, alpha: 20)
-            scrollView.addSubview(newPageView)
-            
+            //containerView.addSubview(newPageView)
+//            scrollView.addSubview(newPageView)
+            //pageImages[page].backgroundColor = UIColor(red: 255, green: 0, blue: 0, alpha: 20)
+            pageImages[page].contentMode = .ScaleAspectFit
+            pageImages[page].frame = frame
+            scrollView.addSubview(pageImages[page])
             // 4
-            pageViews[page] = newPageView
+            pageViews[page] = pageImages[page]
         }
     }
     func purgePage(page: Int) {
