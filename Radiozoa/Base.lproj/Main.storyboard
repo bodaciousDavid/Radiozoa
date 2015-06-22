@@ -27,48 +27,6 @@
                             </label>
                             <scrollView autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFit" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="black" delaysContentTouches="NO" canCancelContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIb-gn-uBy">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <subviews>
-                                    <view autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ya1-dm-Sic">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="404" height="683"/>
-                                        </variation>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Ya1-dm-Sic" secondAttribute="trailing" id="3Fv-5n-5qk"/>
-                                    <constraint firstItem="Ya1-dm-Sic" firstAttribute="leading" secondItem="VIb-gn-uBy" secondAttribute="leading" id="7yi-TF-XgQ"/>
-                                    <constraint firstItem="Ya1-dm-Sic" firstAttribute="width" secondItem="VIb-gn-uBy" secondAttribute="width" id="F2R-fV-zPg"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ya1-dm-Sic" secondAttribute="bottom" id="iiL-by-3zW"/>
-                                    <constraint firstItem="Ya1-dm-Sic" firstAttribute="top" secondItem="VIb-gn-uBy" secondAttribute="top" id="rle-8Q-axf"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="Ya1-dm-Sic"/>
-                                    </mask>
-                                    <mask key="constraints">
-                                        <exclude reference="3Fv-5n-5qk"/>
-                                        <exclude reference="7yi-TF-XgQ"/>
-                                        <exclude reference="F2R-fV-zPg"/>
-                                        <exclude reference="iiL-by-3zW"/>
-                                        <exclude reference="rle-8Q-axf"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact" ambiguous="YES">
-                                    <rect key="frame" x="5" y="53" width="404" height="683"/>
-                                    <mask key="subviews">
-                                        <include reference="Ya1-dm-Sic"/>
-                                    </mask>
-                                    <mask key="constraints">
-                                        <include reference="3Fv-5n-5qk"/>
-                                        <include reference="7yi-TF-XgQ"/>
-                                        <include reference="F2R-fV-zPg"/>
-                                        <include reference="iiL-by-3zW"/>
-                                        <include reference="rle-8Q-axf"/>
-                                    </mask>
-                                </variation>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14901960780000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -114,7 +72,6 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
-                        <outlet property="containerView" destination="Ya1-dm-Sic" id="UrY-HS-LHU"/>
                         <outlet property="scrollView" destination="VIb-gn-uBy" id="niI-lP-5bJ"/>
                     </connections>
                 </viewController>
