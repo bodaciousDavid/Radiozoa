@@ -21,7 +21,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         let imageWidth:CGFloat = scrollView.frame.size.width
         
         // vertical spacing of images. Images start at top of scroll view
-        var yPostion: CGFloat = 0
+        var yPostion: CGFloat = 64
         
         var scrollViewContentSize:CGFloat = 0
         // for all images in MyImage
