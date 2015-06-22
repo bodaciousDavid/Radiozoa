@@ -18,55 +18,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radiozoa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1O-bU-EsS">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" red="1" green="0.66274509800000003" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <scrollView autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFit" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="black" delaysContentTouches="NO" canCancelContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIb-gn-uBy">
+                            <scrollView autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFit" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="black" delaysContentTouches="NO" canCancelContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIb-gn-uBy">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </scrollView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kNH-KP-NaA">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="HpL-LU-aX0"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.054901960784313725" green="0.023529411764705882" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                    <color key="textColor" red="1" green="0.66274509800000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textShadowColor" red="0.99775094696969702" green="0.97352975004026332" blue="0.95730213676659703" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Radiozoa" id="dtQ-gM-PUB"/>
+                                </items>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="HpL-LU-aX0"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <mask key="constraints">
+                                        <include reference="HpL-LU-aX0"/>
+                                    </mask>
+                                </variation>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14901960780000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="VIb-gn-uBy" firstAttribute="leading" secondItem="n77-DR-sTK" secondAttribute="leadingMargin" constant="-11" id="6Ly-i2-oPN"/>
-                            <constraint firstItem="l1O-bU-EsS" firstAttribute="centerX" secondItem="VIb-gn-uBy" secondAttribute="centerX" id="QYO-jE-dNj"/>
-                            <constraint firstItem="l1O-bU-EsS" firstAttribute="leading" secondItem="n77-DR-sTK" secondAttribute="leading" id="Yvn-vt-Nao"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kNH-KP-NaA" secondAttribute="trailing" constant="-16" id="8bZ-Fj-hHg"/>
+                            <constraint firstItem="kNH-KP-NaA" firstAttribute="leading" secondItem="n77-DR-sTK" secondAttribute="leadingMargin" constant="-16" id="Car-3y-7vd"/>
+                            <constraint firstItem="kNH-KP-NaA" firstAttribute="top" secondItem="n77-DR-sTK" secondAttribute="topMargin" id="Yfa-or-DsM"/>
                             <constraint firstAttribute="bottomMargin" secondItem="VIb-gn-uBy" secondAttribute="bottom" id="Zwn-GH-Fyl"/>
+                            <constraint firstItem="VIb-gn-uBy" firstAttribute="top" secondItem="n77-DR-sTK" secondAttribute="topMargin" id="doo-6A-Xxs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VIb-gn-uBy" secondAttribute="trailing" constant="-11" id="fIw-cG-pMJ"/>
-                            <constraint firstItem="l1O-bU-EsS" firstAttribute="top" secondItem="n77-DR-sTK" secondAttribute="topMargin" constant="15" id="iIl-W0-nC4"/>
-                            <constraint firstItem="VIb-gn-uBy" firstAttribute="top" secondItem="l1O-bU-EsS" secondAttribute="bottom" constant="2" id="vJf-hH-WK8"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="l1O-bU-EsS"/>
                                 <exclude reference="VIb-gn-uBy"/>
+                                <exclude reference="kNH-KP-NaA"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="QYO-jE-dNj"/>
-                                <exclude reference="Yvn-vt-Nao"/>
-                                <exclude reference="iIl-W0-nC4"/>
+                                <exclude reference="8bZ-Fj-hHg"/>
+                                <exclude reference="Car-3y-7vd"/>
+                                <exclude reference="Yfa-or-DsM"/>
                                 <exclude reference="6Ly-i2-oPN"/>
                                 <exclude reference="Zwn-GH-Fyl"/>
+                                <exclude reference="doo-6A-Xxs"/>
                                 <exclude reference="fIw-cG-pMJ"/>
-                                <exclude reference="vJf-hH-WK8"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="l1O-bU-EsS"/>
                                 <include reference="VIb-gn-uBy"/>
+                                <include reference="kNH-KP-NaA"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="QYO-jE-dNj"/>
-                                <include reference="Yvn-vt-Nao"/>
-                                <include reference="iIl-W0-nC4"/>
+                                <include reference="8bZ-Fj-hHg"/>
+                                <include reference="Car-3y-7vd"/>
+                                <include reference="Yfa-or-DsM"/>
                                 <include reference="6Ly-i2-oPN"/>
                                 <include reference="Zwn-GH-Fyl"/>
+                                <include reference="doo-6A-Xxs"/>
                                 <include reference="fIw-cG-pMJ"/>
-                                <include reference="vJf-hH-WK8"/>
                             </mask>
                         </variation>
                     </view>
