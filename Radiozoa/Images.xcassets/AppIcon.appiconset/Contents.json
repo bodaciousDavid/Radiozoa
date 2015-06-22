@@ -3,37 +3,37 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "icon29_2x.png",
+      "filename" : "RadiozoaLogo29_2x.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "icon29_3x.png",
+      "filename" : "RadiozoaLogo29_3x.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "icon40_2x.png",
+      "filename" : "RadiozoaLogo40_2x.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "icon40_3x.png",
+      "filename" : "RadiozoaLogo40_3x.png",
       "scale" : "3x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "icon60_2x.png",
+      "filename" : "RadiozoaLogo60_2x.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "icon60_3X.png",
+      "filename" : "RadiozoaLogo60_3x.png",
       "scale" : "3x"
     }
   ],
